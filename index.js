@@ -59,11 +59,6 @@ const draw = () => {
       let colNode = doc.createElement("div");
       colNode.setAttribute("class", "col");
       colNode.dataset.value = col;
-      // if (col === 1) {
-      //   colNode.style.backgroundColor = "#000";
-      // } else {
-      //   colNode.style.backgroundColor = "#fff";
-      // }
 
       rowNode.appendChild(colNode);
     });
@@ -90,18 +85,11 @@ const tick = () => {
 
 const hihglightCellsByValue = () => {
   let cellNodes = doc.querySelectorAll('.col');
-  // console.log(currentGrid);
 
   currentGrid.forEach((row, rIdx) => {
     row.forEach((col, cIdx) => {
       let currentCellNode = cellNodes[rIdx * cols + cIdx];
       currentCellNode.dataset.value = col;
-
-      // if (col === 1) {
-      //   currentCellNode.style.backgroundColor = '#000';
-      // } else {
-      //   currentCellNode.style.backgroundColor = "#fff";
-      // }
     });
   });
 };
@@ -150,9 +138,9 @@ const testTwo = () => {
 };
 
 const init = () => {
+  //call testOne or testTwo here to test
+  // a couple of edge cases
   setup();
-  // testOne();
-  // testTwo();
   draw();
 
   tick();
